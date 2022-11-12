@@ -1,0 +1,43 @@
+   ref: https://epma.medium.com/install-sonatype-nexus-3-on-ubuntu-20-04-lts-562f8ba20b98
+   
+   
+   
+   3  sudo apt-get install openjdk-8-jdk
+    4  apt update
+    5  sudo apt-get install openjdk-8-jdk
+    6  java
+    7  java -version
+    8  clear
+    9  cd /opt
+   10  wget http://download.sonatype.com/nexus/3/nexus-3.22.0-02-unix.tar.gz
+   11  ls -lrt
+   12  tar -xf nexus-3.22.0-02-unix.tar.gz 
+   13  clear
+   14  ls -lrt
+   15  mv nexus-3.22.0-02 nexus
+   16  ls -lrt
+   17  sudo adduser nexus
+   18  clear
+   19  cat /etc/passwd
+   20  ls -lrt
+   21  sudo chown -R nexus:nexus /opt/nexus
+   22  sudo chown -R nexus:nexus /opt/sonatype-work/
+   23  sudo chown -R nexus:nexus /opt/sonatype-work
+   24  cd nexus/
+   25  ls -lrt
+   26  bi
+   27  cd bin/
+   28  ls -lrt
+   29  vi nexus.rc 
+   30  vi nexus.vmoptions 
+   31  vim /etc/systemd/system/nexus.service
+   32  systemctl enable nexus
+   33  sudo systemctl start nexus
+   34  systemctl status nexus
+   35  tail -f /opt/sonatype-work/nexus3/log/nexus.log
+   36  nestat -a
+   37  netstat -a
+   38  apt install net-tools
+   39  netstat -a
+   40  netstat -tunlp
+   41  history
