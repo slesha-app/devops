@@ -1,0 +1,13 @@
+    6  javac
+   
+    8  apt update
+    9  apt install openjdk-11-jdk-headless
+
+   11  java -version
+   12  curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee   /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+   13  echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]   https://pkg.jenkins.io/debian-stable binary/ | sudo tee   /etc/apt/sources.list.d/jenkins.list > /dev/null
+   14  sudo apt-get update
+   15  sudo apt-get install jenkins
+
+   17  systemctl status jenkins
+   
