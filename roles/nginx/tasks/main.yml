@@ -1,4 +1,7 @@
 ---
+- name: debug
+  debug:
+    msg: "var:  {{ version }} "
 - name: install package nginx
   apt:
     name: "{{ packagename }}"
