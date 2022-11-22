@@ -1,0 +1,4 @@
+clone this repo
+chnage ip address in inventory.yml
+enable ssh using ssh-keygen command
+ansible-playbook -i inventory.yml site.yml
