@@ -1,0 +1,12 @@
+all:
+  children:
+    webserver:
+      hosts:
+        172.31.34.117:
+    local:
+      hosts:
+        localhost:
+      vars:
+        ansible_connection: local
+
+

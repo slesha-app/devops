@@ -1,0 +1,32 @@
+---
+- hosts: webserver
+  vars:
+    packagename: "nginx"
+  tasks:
+  - name: install package nginx
+    apt:
+      name: "{{ packagename }}"
+      state: latest
+  - name: create directory tutortial
+    file:
+      path: /var/www/tutortial
+      state: directory
+  - name: copy file index.html
+    copy:
+      src: index.html
+      dest: /var/www/tutortial/index.html
+    notify: restart service nginx
+  - name: copy file tutorial
+    copy:
+      src: tutorial
+      dest: /etc/nginx/sites-enabled/tutorial
+    notify: restart service nginx 
+  - name: start service nginx 
+    service:
+      name: nginx
+      state: started 
+  handlers:
+  - name: restart service nginx 
+    service:
+      name: "{{ packagename }}"
+      state: restarted 
